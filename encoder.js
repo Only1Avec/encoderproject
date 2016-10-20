@@ -28,7 +28,7 @@ var caeser = {
   32: "",
 }
 
-//caeser cipher
+//caeser cipher: shifts letter by 1
 
 $("#inputText").keydown(function(e) {
 
@@ -67,6 +67,8 @@ var echo = {
   90: "z",
   32: " ",
 }
+
+//echo just copies what you write
 
 var heiroglyphics = {
   65: "<img src='images/heiroglyphics/a.gif'>",

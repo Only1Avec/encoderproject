@@ -10,6 +10,11 @@
   height: 50px;
 }
 
+body{
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
 #inputText {
   width: 700px;
   height: 50px;

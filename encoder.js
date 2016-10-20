@@ -1,4 +1,4 @@
-var cipher = {
+var caeser = {
   65: "z",
   66: "a",
   67: "b",
@@ -25,8 +25,10 @@ var cipher = {
   88: "w",
   89: "x",
   90: "y",
-  32: " ",
+  32: "",
 }
+
+//caeser cipher
 
 $("#inputText").keydown(function(e) {
 
@@ -36,7 +38,7 @@ $("input[type='radio']").click(function(e) {
   $(this).prop('checked', false);
 });
 
-var code = {
+var echo = {
   65: "a",
   66: "b",
   67: "c",
@@ -139,11 +141,11 @@ else if($("input:checked").val() == "rune") { // if rune is selected
 }
 
 else if($("input:checked").val() == "echo") { // if echo is selected
- document.getElementById("textArea").innerHTML += code[e.keyCode];
+ document.getElementById("textArea").innerHTML += echo[e.keyCode];
 }
 
 else if($("input:checked").val() == "caeser cipher") { // if ceaser cipher is selected
-  document.getElementById("textArea").innerHTML += cipher[e.keyCode];
+  document.getElementById("textArea").innerHTML += caeser[e.keyCode];
 }
 });
 

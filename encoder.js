@@ -1,4 +1,5 @@
-var caeser = {
+var caeser =
+  32: "",
   65: "z",
   66: "a",
   67: "b",
@@ -25,7 +26,6 @@ var caeser = {
   88: "w",
   89: "x",
   90: "y",
-  32: "",
 }
 
 //caeser cipher: shifts letter by 1
@@ -39,6 +39,7 @@ $("input[type='radio']").click(function(e) {
 });
 
 var echo = {
+  32: " ",
   65: "a",
   66: "b",
   67: "c",
@@ -65,12 +66,12 @@ var echo = {
   88: "x",
   89: "y",
   90: "z",
-  32: " ",
 }
 
 //echo just copies what you write
 
 var heiroglyphics = {
+  32: " "
   65: "<img src='images/heiroglyphics/a.gif'>",
   66: "<img src='images/heiroglyphics/b.gif'>",
   67: "<img src='images/heiroglyphics/c.gif'>",
@@ -97,10 +98,12 @@ var heiroglyphics = {
   88: "<img src='images/heiroglyphics/x.gif'>",
   89: "<img src='images/heiroglyphics/y.gif'>",
   90: "<img src='images/heiroglyphics/z.gif'>",
-  32: " "
 }
 
+//when keys are pressed, it displays the heiroglyphic for that letter
+
 var runes = {
+  32: " "
   65: "<img src='images/runes/a.gif'>",
   66: "<img src='images/runes/b.gif'>",
   67: "<img src='images/runes/c.gif'>",
@@ -127,29 +130,38 @@ var runes = {
   88: "<img src='images/runes/x.gif'>",
   89: "<img src='images/runes/y.gif'>",
   90: "<img src='images/runes/z.gif'>",
-  32: " "
 }
+
+//when keys are pressed, it displays the rune for that letter
 
 if(e.keyCode == 8) {
   document.getElementById('textArea').textContent = document.getElementById('textArea').textContent.substr(0, document.getElementById('textArea').textContent.length - 1);
 }
 
-if($("input:checked").val() == "heiroglyphics") { // if heiroglyphics is selected
+if($("input:checked").val() == "heiroglyphics") {
     document.getElementById("textArea").innerHTML += heiroglyphics[e.keyCode];
 }
 
-else if($("input:checked").val() == "rune") { // if rune is selected
+// if heiroglyphics is selected
+
+else if($("input:checked").val() == "rune") {
   document.getElementById("textArea").innerHTML += runes[e.keyCode];
 }
 
-else if($("input:checked").val() == "echo") { // if echo is selected
+// if rune is selected
+
+else if($("input:checked").val() == "echo") {
  document.getElementById("textArea").innerHTML += echo[e.keyCode];
 }
 
-else if($("input:checked").val() == "caeser cipher") { // if ceaser cipher is selected
+ // if echo is selected
+
+else if($("input:checked").val() == "caeser cipher") {
   document.getElementById("textArea").innerHTML += caeser[e.keyCode];
 }
 });
+
+ // if caeser cipher is selected
 
 $("#translationInputArea").keydown(function(e) {
   if($("input:checked").val() == "caeser cipher"){
